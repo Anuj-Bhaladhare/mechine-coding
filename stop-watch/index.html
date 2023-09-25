@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    
+    <div class="flex gap-2 items-center justify-center h-screen w-screen">
+        <h4 class="hour-input"></h4>:
+        <h4 class="minute-input"></h4>:
+        <h4 class="second-input"></h4>
+    </div>
+
+    <div class="flex gap-2 items-center justify-center h-screen w-screen">
+       <form action="">
+            <input class="set-hour-input border border-black w-[2rem]">:
+            <input class="set-minute-input border border-black w-[2rem]">:
+            <input class="set-second-input border border-black w-[2rem]">
+            <button type="submit">Set</button>
+       </form>
+    </div>
+
+    <script>
+        const setHour = document.querySelector(".hour-input");
+        const setMinute = document.querySelector(".minute-input");
+        const setSecond = document.querySelector(".second-input");
+
+        const setHourInput = document.querySelector(".set-hour-input");
+        const setMinuteInput = document.querySelector(".set-minute-input");
+        const setSecondInput = document.querySelector(".set-second-input");
+
+        const startTimer = () => {
+            const timer = new Date();
+
+            const hour = timer.getHours();
+            const minute = timer.getMinutes();
+            const second = timer.getSeconds();
+
+            setHour.innerHTML = hour;
+            setMinute.innerHTML = minute;
+            setSecond.innerHTML = second;
+
+            const setHourValue = parseInt(setHourInput.value);
+            const setMinuteValue = parseInt(setMinuteInput.value);
+            const setSecondValue = parseInt(setSecondInput.value);
+
+            if (hour === setHourValue && minute === setMinuteValue && second === setSecondValue) {
+                clearInterval(interval);
+                document.write("Time Over");
+            }
+        };
+
+        const interval = setInterval(() => {
+            startTimer();
+        }, 1000);
+    </script>
 </body>
 </html>
