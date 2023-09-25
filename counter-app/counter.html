@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>
+       <button class="minus">decress</button>
+       <div class="value">0</div>
+       <button class="pluss">incress</button>
+       <button class="clear">clear</button>
+    </div>
+
+    <script>
+        const munusButton = document.querySelector(".minus")
+        const valueNumber = document.querySelector(".value")
+        const plusButton = document.querySelector(".pluss")
+        const clearButton = document.querySelector(".clear")
+        
+        let number = 0;
+
+        munusButton.addEventListener("click", () => {
+            number--;
+            valueNumber.innerHTML = number;
+        })
+
+        plusButton.addEventListener("click", () => {
+            number++;
+            valueNumber.innerHTML = number;
+        })
+
+        clearButton.addEventListener("click", () => {
+            number = 0
+            valueNumber.innerHTML = number;
+        })
+    </script>
+</body>
+</html>
