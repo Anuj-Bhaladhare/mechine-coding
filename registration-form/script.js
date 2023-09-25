@@ -20,9 +20,10 @@ registerForm.addEventListener("submit", (event) => {
     // console.log(allFormData);
 
     submitUserDetails.innerHTML += `
-    <h2>${allFormData.nameValue}</h2>
-    <p>${allFormData.emailValue}</p>
-    <p>${allFormData.passValue}</p>
+    <p> Name :- ${allFormData.nameValue}</p>
+    <p> Email :- ${allFormData.emailValue}</p>
+    <p> Password :- ${allFormData.passValue}</p>
+    <hr />
 `
 
     registerForm.reset();
